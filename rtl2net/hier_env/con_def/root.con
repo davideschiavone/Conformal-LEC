@@ -1,0 +1,72 @@
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_7
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_7
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_6
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_6
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_5
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_5
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_4
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_4
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_3
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_3
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_2
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_2
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_1
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_1
+//
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[13\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[12\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[11\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_2_reg_reg\[10\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[13\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[12\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[11\] -module S3VDV_intra_angulartop8_0
+vpx add instance constraints 0   pixel_result_ang_wire_1_reg_reg\[10\] -module S3VDV_intra_angulartop8_0
+
