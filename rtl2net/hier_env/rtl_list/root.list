@@ -1,0 +1,10 @@
+// define file
+/../default_define
+
+// design dir
++incdir+/../dir1
++incdir+/../dir2
+
+// design file list
+/../file1.v
+/../file2.v
