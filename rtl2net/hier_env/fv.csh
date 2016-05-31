@@ -1,15 +1,19 @@
+
 #!/bin/csh -f
 ##########################################################################
 #  File Name    : fv.csh
 #  Description  : 
 #               : 
 #  Author Name  : Davis Cao
-#  Email        : daviscao@**.com
+#  Email        : daviscao@zhaoxin.com
 #  Create Date  : 2016-05-19 11:04
 ##########################################################################
 set LEC_VERSION		= "14.20-s260"
-set top_module		= "root"
-set run_module		= "root_enc_top_0"
+set top_module		= "S3VDV"
+#set run_module		= "S3VDV_enc_regs_0"
+set run_module		= "S3VDV"
+#set run_module		= "S3VDV_jpg_dbuftab_0"
+#set run_module		= "S3VDV_enc_hevc_vlectl_0"
 set LEC_dir		= "$cwd"
 
 set work_dir		= "$LEC_dir/$top_module.cfm"
@@ -62,3 +66,5 @@ source $setup_dir/setup.lec
 lec -nogui -xl -64 -dofile $dofile
 
 cp lec.hier.log.$LEC_VERSION $work_dir/$run_module.lec.hier.log.$LEC_VERSION
+cp -rf bbox con_def dofile rtl_list $work_dir/scripts
+

@@ -1,3 +1,4 @@
+
 //**************************************************************************
 //*
 //* Copyright (C) 2012-2015 Cadence Design Systems, Inc.
@@ -94,6 +95,7 @@ vpx add pin constraints 0 TEST_CG -both -all
 vpx add pin constraint 0 LV_WRSTN -both	// mbist input
 vpx add pin constraint 0 LV_TM    -both // mbist input
 
+vpx add ig o *PWRON_*_BE -both 		// power output in revised for BCI_PWM_S3VD_PWRON_1_BE,BCI_PWM_S3VD_PWRON_0_BE
 
 vpx add ig o test_so*  -both
 vpx add ig o SCAN_OUT* -both
@@ -114,6 +116,7 @@ vpx report black box -detail
 //**************************************************************************                                                                                               
 vpx set flatten model  -seq_constant
 vpx set flatten model  -gated_clock
+vpx set flatten model  -all_seq_merge		//davis
 vpx set flatten model  -latch_fold		//davis
 vpx set flatten model  -nodff_to_dlat_feedback	//davis
 vpx set flatten model  -ENABLE_ANALYZE_HIER_COMPARE //davis
@@ -146,14 +149,15 @@ vpx set parallel option -threads 10 -norelease_license
 
 vpxmode 
 write hier_compare dofile hier.do -replace -usage \
-	-module <run_module> <run_module> \
+	-module S3VDV S3VDV \
 	-constraint  -input_output_pin_equivalence \
 	-noexact_pin_match -verbose \
 	-balanced_extraction  \
 	-function_pin_mapping \
 	-prepend_string "dofile dofile/prepend.do" \
 	-compare_string "dofile dofile/compare.do" \
-	-APPEND_String "dofile dofile/append.do"
+	-APPEND_String "dofile dofile/append.do" 
+		// -ignore_mismatch_ports  useless options
 tclmode
 //************************************************************************
 // Executes the hier.do script
