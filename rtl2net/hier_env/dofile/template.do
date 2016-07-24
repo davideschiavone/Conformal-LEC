@@ -20,6 +20,9 @@
 vpx set Undefined Cell black_box -both
 vpx set undriven signal 0 -golden
 vpx set naming style DC
+vpx set Naming Rule "/" -Hierarchical_separator -Both
+vpx set naming rule "_" "_" -array -golden
+vpx set naming rule _BAR -inverted_pin_extension -golden
 //**************************************************************************
 //* Sets up the log file and instructs the tool to display usage information
 //**************************************************************************
@@ -58,7 +61,6 @@ vpx read design -verilog -replace -golden -noelaborate \
 
 vpx elaborate design  -golden
 vpx set root module $run_module -golden
-
 vpx read design -verilog -replace -revised -noelaborate \
     $netlist 
 
@@ -68,7 +70,7 @@ vpx set root module $run_module -revised
 vpx report design data
 //vpx report black box -detailtemplate
 //uniquify -all -nolibrary
-vpx uniquify -all
+vpx uniquify -all -use_renaming_rules
 
 //vpx dofile $bbox_user_file
 vpx report black box -detail    
@@ -76,9 +78,6 @@ vpx report black box -detail
 //* Specifies renaming rules
 //**************************************************************************                                                                                               
 //add renaming rule <rulename> <string><string> [-Golden |-Revised |-BOth]
-vpx set Naming Rule "/" -Hierarchical_separator -Both
-vpx set naming rule "_" "_" -array -golden
-vpx set naming rule _BAR -inverted_pin_extension -golden
 //davis add for bbox match "/DIV_QUANT/DIVIDER0 <=> /DIV_QUANT_DIVIDER0"
 vpx set mapping method -nobbox_name_match
 //**************************************************************************
@@ -106,9 +105,11 @@ vpx report pin constraints -all -both
 
 
 // user define constraints 
-vpx dofile $condef_file
+if {[file exists $condef_file]} {
+    vpx dofile $condef_file
+}
 //vpx dofile $con_mega_file
-vpx dofile $bbox_user_file
+//vpx dofile $bbox_user_file
 switch $top_module {
     "S3VDV" {
         vpx add black box -module *DW02_tree_wrap* -both
@@ -166,7 +167,7 @@ vpx set parallel option -threads 10 -norelease_license
 
 vpxmode 
 write hier_compare dofile hier.do -replace -usage \
-	-module S3VD1 S3VD1 \
+	-module S3VDQ S3VDQ \
 	-constraint  -input_output_pin_equivalence \
 	-noexact_pin_match -verbose \
 	-balanced_extraction  \

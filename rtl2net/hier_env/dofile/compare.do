@@ -1,27 +1,27 @@
 tclmode
 vpx set compare option -report_bbox_input
 
-// compare bbox points first 
-set bbox_point [get_map_points -bbox]
-if {[llength $bbox_point] > 0} {
-   vpx delete compare points -all
-
-   foreach each_bbox_point $bbox_point {
-       set bbox_key_point [get_keypoint $each_bbox_point]
-       vpx add compare points $bbox_key_point -golden
-   }
-   vpx report compare points -sum
-   vpx compare
-   //vpx report compare data -class nonequivalent > $bbox_compare_result
-   vpx report compare data -class nonequivalent
-   if { [llength [get_compare_points -NON]] == 0} {
-       vpx add compare points -all
-   } else {
-       vpx save session -replace $work_dir/$current_module.compare_hier.bboxnone
-       vpx add compare points -all
-       vpx exit -f
-   }
-}
+    //// compare bbox points first 
+    //set bbox_point [get_map_points -bbox]
+    //if {[llength $bbox_point] > 0} {
+    //   vpx delete compare points -all
+    //
+    //   foreach each_bbox_point $bbox_point {
+    //       set bbox_key_point [get_keypoint $each_bbox_point]
+    //       vpx add compare points $bbox_key_point -golden
+    //   }
+    //   vpx report compare points -sum
+    //   vpx compare
+    //   //vpx report compare data -class nonequivalent > $bbox_compare_result
+    //   vpx report compare data -class nonequivalent
+    //   if { [llength [get_compare_points -NON]] == 0} {
+    //       vpx add compare points -all
+    //   } else {
+    //       vpx save session -replace $work_dir/$current_module.compare_hier.bboxnone
+    //       vpx add compare points -all
+    //       vpx exit -f
+    //   }
+    //}
 
 //    // compare cut points then 
 //     set cut_point [get_map_points -cut]
@@ -58,9 +58,12 @@ if {[llength $bbox_point] > 0} {
 //       //dofile /project/chx001/usr/daviscao_fv/snps/FV_fsotest/FV_compbymod.do
 //       //vpx add compare points -all
 //     }
-if { [llength [get_compare_points -NON]] == 0} {
-    vpx add compare points -all
-    vpx compare -threads 10 -noneq_print -abort_print -effort high -timestamp
-}
+
+vpx compare -threads 10 -noneq_print -abort_print -effort high -timestamp
+
+//if { [llength [get_compare_points -NON]] == 0} {
+//    vpx add compare points -all
+//    vpx compare -threads 10 -noneq_print -abort_print -effort high -timestamp
+//}
 vpxmode
 
