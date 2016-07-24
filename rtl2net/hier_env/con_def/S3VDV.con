@@ -256,3 +256,5 @@ vpx add instance constraints 0   nbmv_c_reg_reg\[3\]\[35\]  -module S3VDV_prd_mb
 vpx add instance constraints 0   nbmv_c_reg_reg\[3\]\[34\]  -module S3VDV_prd_mbinit_0
 vpx add instance constraints 0   nbmv_c_reg_reg\[3\]\[33\]  -module S3VDV_prd_mbinit_0
 vpx add instance constraints 0   nbmv_c_reg_reg\[3\]\[32\]  -module S3VDV_prd_mbinit_0
+
+vpx add ig o o_data\[73\] -module S3VDV_sync_fifo_BITSWIDTH75_FIFODEPTH3_0 -eq

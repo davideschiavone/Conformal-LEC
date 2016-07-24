@@ -34,6 +34,7 @@
 /wrk/foundry/CLTE/tsmc28nm/TSMCHOME/digital/Front_End/verilog/tcbn28hpmbwp35cghvt_111a/tcbn28hpmbwp35cghvt_pwr.v
 /wrk/foundry/CLTE/tsmc28nm/TSMCHOME/digital/Front_End/verilog/tcbn28hpmbwp35cguhvt_111a/tcbn28hpmbwp35cguhvt.v
 /wrk/foundry/CLTE/tsmc28nm/TSMCHOME/digital/Front_End/verilog/tcbn28hpmbwp35cguhvt_111a/tcbn28hpmbwp35cguhvt_pwr.v
+/project/zx2000/usr/daviscao/design/library/tsmc/s3core/svt/s3_cell.v
 /wrk/foundry/CLTE/tsmc28nm/TSMCHOME/digital/Front_End/verilog/tcbn28hpmbwp35hvt_c131025_120a/tcbn28hpmbwp35hvt_c131025.v
 /wrk/foundry/CLTE/tsmc28nm/TSMCHOME/digital/Front_End/verilog/tcbn28hpmbwp35_c131025_120a/tcbn28hpmbwp35_c131025.v
 
