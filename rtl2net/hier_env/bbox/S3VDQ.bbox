@@ -1,0 +1,2 @@
+vpx add black box -module *DW02_multp* -both
+vpx add black box -module *DW_div_pipe* -both

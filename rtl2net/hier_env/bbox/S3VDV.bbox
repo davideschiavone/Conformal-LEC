@@ -1,0 +1,26 @@
+vpx add black box -module *DW02_tree_wrap* -both
+
+
+//set bbox_user_list [list \
+//	"S3VDV_intra_angulartop8_0" \
+//	"S3VDV_intra_angulartop8_1" \
+//	"S3VDV_intra_angulartop8_2" \
+//	"S3VDV_intra_angulartop8_3" \
+//	"S3VDV_intra_angulartop8_4" \
+//	"S3VDV_intra_angulartop8_5" \
+//	"S3VDV_intra_angulartop8_6" \
+//	"S3VDV_intra_angulartop8_7" \
+//	]
+//foreach eachbbox $bbox_user_list {
+//    if { $eachbbox ne "$run_module" } {
+//        vpx add black box -module $eachbbox -both
+//    }
+//}
+//vpx add black box -module S3VDV_intra_angulartop8_0 -both
+//vpx add black box -module S3VDV_intra_angulartop8_1 -both
+//vpx add black box -module S3VDV_intra_angulartop8_2 -both
+//vpx add black box -module S3VDV_intra_angulartop8_3 -both
+//vpx add black box -module S3VDV_intra_angulartop8_4 -both
+//vpx add black box -module S3VDV_intra_angulartop8_5 -both
+//vpx add black box -module S3VDV_intra_angulartop8_6 -both
+//vpx add black box -module S3VDV_intra_angulartop8_7 -both

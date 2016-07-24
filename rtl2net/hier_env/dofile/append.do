@@ -12,3 +12,4 @@ if {[ get_compare_points -abort -nonequivalent -count ] > 0} {
     //vpx report compare data -class abort
 }
 vpxmode
+

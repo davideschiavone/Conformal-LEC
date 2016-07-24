@@ -1,4 +1,3 @@
-
 //**************************************************************************
 //*
 //* Copyright (C) 2012-2015 Cadence Design Systems, Inc.
@@ -20,6 +19,7 @@
 //**************************************************************************
 vpx set Undefined Cell black_box -both
 vpx set undriven signal 0 -golden
+vpx set naming style DC
 //**************************************************************************
 //* Sets up the log file and instructs the tool to display usage information
 //**************************************************************************
@@ -57,13 +57,16 @@ vpx read design -verilog -replace -golden -noelaborate \
     -file $rtl_list
 
 vpx elaborate design  -golden
+vpx set root module $run_module -golden
 
 vpx read design -verilog -replace -revised -noelaborate \
     $netlist 
 
 vpx elaborate design  -revised
+vpx set root module $run_module -revised
+
 vpx report design data
-//vpx report black box -detail
+//vpx report black box -detailtemplate
 //uniquify -all -nolibrary
 vpx uniquify -all
 
@@ -76,39 +79,53 @@ vpx report black box -detail
 vpx set Naming Rule "/" -Hierarchical_separator -Both
 vpx set naming rule "_" "_" -array -golden
 vpx set naming rule _BAR -inverted_pin_extension -golden
+//davis add for bbox match "/DIV_QUANT/DIVIDER0 <=> /DIV_QUANT_DIVIDER0"
+vpx set mapping method -nobbox_name_match
 //**************************************************************************
 //* Specifies user constraints for test/dft/etc.
 //**************************************************************************                                                                                               
 //add pin constraint 0 scan_en  -golden/revised 
 //add ignore output  scan_out -golden/revised
-//vpx add pin constraints 0 SCAN_EN -revised -all
-//vpx add pin constraints 0 SCAN_ENa -revised -all
-//vpx add pin constraints 0 test_si* -revised -all
-//vpx add pin constraints 0 TEST_CG -revised -all
 
-
-vpx add pin constraints 0 SCAN_EN -both -all
-vpx add pin constraints 0 SCAN_ENa -both -all
-vpx add pin constraints 0 test_si* -both -all
-vpx add pin constraints 0 TEST_CG -both -all
+vpx add pin constraints 0 SCAN_EN -both // clark confirm
+//0617vpx add pin constraints 0 SCAN_ENa -both -all
+//0617vpx add pin constraints 0 test_si* -both -all
+vpx add pin constraints 0 TEST_CG -both // clark confirm
 
 vpx add pin constraint 0 LV_WRSTN -both	// mbist input
 vpx add pin constraint 0 LV_TM    -both // mbist input
 
 vpx add ig o *PWRON_*_BE -both 		// power output in revised for BCI_PWM_S3VD_PWRON_1_BE,BCI_PWM_S3VD_PWRON_0_BE
 
-vpx add ig o test_so*  -both
-vpx add ig o SCAN_OUT* -both
+vpx add ig o SCAN_OUT* -both		// clark confirm
 vpx add ig o LV_AuxEn  -both		// mbist output is floating
 vpx add ig o LV_WSO    -both		// mbist output is floating
 vpx add ig o LV_AuxOut -both		// mbist output is floating
 
 vpx report pin constraints -all -both
+
+
 // user define constraints 
 vpx dofile $condef_file
-vpx dofile $con_mega_file
-
+//vpx dofile $con_mega_file
 vpx dofile $bbox_user_file
+switch $top_module {
+    "S3VDV" {
+        vpx add black box -module *DW02_tree_wrap* -both
+	vpx dofile $con_mega_file
+    }
+    "S3VDQ" {
+        vpx add black box -module *DW02_multp* -both
+        vpx add black box -module *DW_div_pipe* -both
+
+        vpx add ig i Internal_scan* -module *DW_div_pipe* -revised 
+        vpx add ig i ScanCo*        -module *DW_div_pipe* -revised
+        vpx add ig i test*          -module *DW_div_pipe* -revised
+        vpx add ig i SCAN_EN        -module *DW_div_pipe* -revised //davis add for S3VDQ
+        vpx add ig i SCAN_ENa       -module *DW_div_pipe* -revised //davis add for S3VDQ
+    }
+}
+
 vpx report black box -detail
 //**************************************************************************
 //* Specifies the modeling directives for constant optimization 
@@ -149,11 +166,12 @@ vpx set parallel option -threads 10 -norelease_license
 
 vpxmode 
 write hier_compare dofile hier.do -replace -usage \
-	-module S3VDV S3VDV \
+	-module S3VD1 S3VD1 \
 	-constraint  -input_output_pin_equivalence \
 	-noexact_pin_match -verbose \
 	-balanced_extraction  \
 	-function_pin_mapping \
+	-keep_top_level_constraints \
 	-prepend_string "dofile dofile/prepend.do" \
 	-compare_string "dofile dofile/compare.do" \
 	-APPEND_String "dofile dofile/append.do" 
@@ -175,3 +193,4 @@ vpx report hier result -noneq -usage
 
 vpx save session -replace $work_dir/$run_module.compare_hier
 vpx usage
+
